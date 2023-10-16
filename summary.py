@@ -7,10 +7,10 @@ from langchain.prompts import load_prompt
 from langchain.document_loaders import PyPDFLoader
 
 # Загрузка из википедии
-# docs = WikipediaLoader(query="Московское центральное кольцо", lang="ru", load_max_docs=1, doc_content_chars_max=1000000).load()
+docs = WikipediaLoader(query="Московское центральное кольцо", lang="ru", load_max_docs=1, doc_content_chars_max=1000000).load()
 
-# Загрузка из pdf
-docs = PyPDFLoader("Московское_центральное_кольцо.pdf").load()
+# Загрузка из pdf (Обратить внимание - PDF очень низкого качества, проблемы в середине слов и т.п.)
+# docs = PyPDFLoader("Московское_центральное_кольцо.pdf").load()
 
 # Загружаем промпты из хаба. Можно сохранить их локально и загружать из файлов, можно написать свои
 map_prompt = load_prompt('lc://prompts/summarize/map_reduce/map.yaml')
